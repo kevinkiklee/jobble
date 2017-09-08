@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/index.jsx',
+  entry: './frontend/index.js',
   output: {
     filename: './app/assets/javascripts/bundle.js',
   },
@@ -14,6 +14,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
