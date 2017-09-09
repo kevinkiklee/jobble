@@ -8,9 +8,7 @@ const AppReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_IS_MOBILE:
       return Object.assign({}, state, {
-        app: {
-          isMobile: action.isMobile,
-        }
+        isMobile: action.isMobile,
       });
 
     default: 
