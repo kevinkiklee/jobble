@@ -1,10 +1,6 @@
 import { RECEIVE_IS_MOBILE } from '../actions/appActions';
 
-const initialState = {
-  isMobile: false,
-};
-
-const AppReducer = (state = initialState, action) => {
+const AppReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_IS_MOBILE:
       return Object.assign({}, state, {

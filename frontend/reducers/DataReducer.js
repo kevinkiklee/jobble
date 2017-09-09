@@ -1,8 +1,6 @@
 import { RECEIVE_DATA } from '../actions/dataActions';
 
-const initialState = {};
-
-const DataReducer = (state = initialState, action) => {
+const DataReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
