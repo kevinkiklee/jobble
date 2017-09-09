@@ -6,7 +6,14 @@ import Root from './layouts/Root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.querySelector('#root');
-  const store = configureStore();
+
+  const preloadedState = {
+    app: {
+      isMobile: false,
+    }
+  };
+  
+  const store = configureStore(preloadedState);
 
   if (process.env.NODE_ENV !== 'production') {
     window.store = store;
