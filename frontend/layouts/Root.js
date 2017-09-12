@@ -1,15 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Route, HashRouter } from 'react-router-dom';
-
+import { Router } from 'react-router-dom';
+import history from '../utils/history';
 import App from './App';
 
 const Root = ({ store }) => {
   return (
     <Provider store={store}>
-      <HashRouter>
+      <Router history={history}>
         <App />
-      </HashRouter>
+      </Router>
     </Provider>
   );
 };
