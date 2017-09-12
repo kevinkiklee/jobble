@@ -1,8 +1,19 @@
 import auth0 from 'auth0-js';
 import createHistory from 'history/createBrowserHistory';
 
+history = createHistory();
+
 export default class Auth {
   constructor() {
+    this.auth0 = new auth0.WebAuth({
+      domain: 'kevinkiklee.auth0.com',
+      clientID: '2gVMUzuCovLtdpVhVkme7wgYI7Mm95GI',
+      redirectUri: 'http://localhost:3000/callback',
+      audience: 'https://kevinkiklee.auth0.com/userinfo',
+      responseType: 'token id_token',
+      scope: 'openid'
+    });
+  
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -29,6 +40,10 @@ export default class Auth {
     history.replace('/main');
   }
 
+  login() {
+    this.auth0.authorize();
+  }
+  
   logout() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
