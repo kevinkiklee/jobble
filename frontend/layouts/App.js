@@ -4,7 +4,7 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { setIsMobile } from '../actions/appActions';
 import Main from './Main';
 import Homepage from './Homepage';
-import AuthCallback from './AuthCallback';
+import AuthCallback from '../components/AuthCallback';
 import Auth from '../utils/authUtil';
 import '../styles/reset.css';
 
