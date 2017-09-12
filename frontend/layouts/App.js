@@ -4,7 +4,9 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { setIsMobile } from '../actions/appActions';
 import Main from './Main';
 import Homepage from './Homepage';
+import AuthCallback from './AuthCallback';
 import Auth from '../utils/authUtil';
+
 import '../styles/reset.css';
 
 class App extends Component {
@@ -19,21 +21,32 @@ class App extends Component {
     }
   }
 
+  handleAuthentication(nextState, replace) {
+    if (/access_token|id_token|error/.test(nextState.location.hash)) {
+      this.auth.handleAuthentication();
+    }
+  }
+
   render() {
     return (
-      <div>
-        <Switch>
-          <Route 
-            path='/main' 
-            render={props => <Main auth={this.auth} {...props} />}
-          />
-          <Route 
-            exact
-            path='/' 
-            render={props => <Homepage auth={this.auth} {...props} />}
-          />
-        </Switch>
-      </div>
+      <Switch>
+        <Route 
+          path='/main' 
+          render={props => <Main auth={this.auth} {...props} />}
+        />
+        <Route 
+          exact
+          path='/' 
+          render={props => <Homepage auth={this.auth} {...props} />}
+        />
+        <Route 
+          path="/callback" 
+          render={props => {
+            this.handleAuthentication(props);
+            return <AuthCallback {...props} /> 
+          }}
+        />
+      </Switch>
     );
   }
 }
