@@ -5,12 +5,8 @@
   cursor: pointer;
   width: 100px;
   text-align: center;
-
-  &:hover {
-  }
 }
 
 .btn:hover {
-  background-color: gray;
-
+  background-color: #EEE;
 }
