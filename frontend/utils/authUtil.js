@@ -1,7 +1,7 @@
 import auth0 from 'auth0-js';
 import createHistory from 'history/createBrowserHistory';
 
-history = createHistory();
+const history = createHistory();
 
 export default class Auth {
   constructor() {
