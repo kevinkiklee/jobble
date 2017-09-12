@@ -27,6 +27,7 @@ class App extends Component {
     }
   }
 
+  //TODO: Implement Route component
   render() {
     return (
       <Switch>
