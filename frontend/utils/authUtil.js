@@ -3,14 +3,20 @@ import history from './history';
 
 export default class Auth {
   constructor() {
-    this.auth0 = new auth0.WebAuth({
+    const authSettings = {
       domain: 'kevinkiklee.auth0.com',
       clientID: '2gVMUzuCovLtdpVhVkme7wgYI7Mm95GI',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: 'http://jobble.herokuapp.com/callback',
       audience: 'https://kevinkiklee.auth0.com/userinfo',
       responseType: 'token id_token',
       scope: 'openid'
-    });
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+      authSettings.redirectUri = 'http://localhost:3000/callback'
+    }
+
+    this.auth0 = new auth0.WebAuth(authSettings);
   
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
