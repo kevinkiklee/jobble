@@ -1,7 +1,5 @@
 import auth0 from 'auth0-js';
-import createHistory from 'history/createBrowserHistory';
-
-const history = createHistory();
+import history from './history';
 
 export default class Auth {
   constructor() {
@@ -26,7 +24,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace('/main');
       } else if (err) {
-        history.replace('/main');
+        history.replace('/');
         console.log(err);
       }
     });
@@ -48,7 +46,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    history.replace('/main');
+    history.replace('/');
   }
 
   isAuthenticated() {
