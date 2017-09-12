@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { setIsMobile } from '../actions/appActions';
 import Main from './Main';
 import Homepage from './Homepage';
@@ -17,8 +17,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={Homepage} />
           <Route path='/main' component={Main} />
+          <Route exact path='/' component={Homepage} />
         </Switch>
       </div>
     );
@@ -33,7 +33,9 @@ const mapDispatchToProps = dispatch => ({
   setIsMobile: isMobile => dispatch(setIsMobile(isMobile)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(App)
+);
