@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { setIsMobile } from '../actions/appActions';
 import Main from './Main';
 import Homepage from './Homepage';
 import AuthCallback from './AuthCallback';
 import Auth from '../utils/authUtil';
-
 import '../styles/reset.css';
 
 class App extends Component {
@@ -27,21 +26,22 @@ class App extends Component {
     }
   }
 
-  //TODO: Implement Route component
   render() {
     return (
       <Switch>
-        <Route 
-          path='/main' 
-          render={props => <Main auth={this.auth} {...props} />}
+        <Route path='/' exact 
+          render={props => 
+            <Homepage auth={this.auth} {...props} />
+          }
         />
-        <Route 
-          exact
-          path='/' 
-          render={props => <Homepage auth={this.auth} {...props} />}
+        <Route path='/main' 
+          render={props =>
+            this.auth.isAuthenticated() 
+            ? <Main auth={this.auth} {...props} />
+            : <Redirect to='/' />
+          }
         />
-        <Route 
-          path="/callback" 
+        <Route path="/callback" 
           render={props => {
             this.handleAuthentication(props);
             return <AuthCallback {...props} /> 
