@@ -1,0 +1,16 @@
+.btn {
+  margin: 3px;
+  padding: 3px;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+
+  &:hover {
+  }
+}
+
+.btn:hover {
+  background-color: gray;
+
+}
