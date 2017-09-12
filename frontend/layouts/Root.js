@@ -1,12 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { Route, HashRouter } from 'react-router-dom';
 
 import App from './App';
 
 const Root = ({ store }) => {
   return (
     <Provider store={store}>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </Provider>
   );
 };

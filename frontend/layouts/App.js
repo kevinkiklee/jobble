@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { setIsMobile } from '../actions/appActions';
-
+import Main from './Main';
+import Homepage from './Homepage';
 import '../styles/reset.css';
 
 class App extends Component {
@@ -13,9 +15,12 @@ class App extends Component {
 
   render() {
     return (
-      <h1>
-        JOBBLE
-      </h1>
+      <div>
+        <Switch>
+          <Route exact path='/' component={Homepage} />
+          <Route path='/main' component={Main} />
+        </Switch>
+      </div>
     );
   }
 }
