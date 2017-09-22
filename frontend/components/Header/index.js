@@ -4,7 +4,7 @@ import './index.css';
 
 const Header = props => {
   return (
-    <div className='header u-border u-flex-center'>
+    <div className='header u-flex-center'>
       <div className='header__left-container'>
         <div className='header__logo'>
           <h2>JOBBLE</h2>
