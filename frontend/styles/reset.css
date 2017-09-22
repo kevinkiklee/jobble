@@ -24,9 +24,13 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	line-height: 1;
-	overflow-y: scroll;
+	height: 100%;
 }
 
 ol, ul {
@@ -60,4 +64,8 @@ button:focus {
 
 input:focus {
 	outline: 0;
+}
+
+#root {
+	height: 100%;
 }

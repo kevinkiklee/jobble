@@ -1,5 +1,14 @@
 @import '../../styles/style.css';
 
+.main {
+  height: 100%;
+}
+
+.main__top-container {
+  height: 50px;
+}
+
 .main__bottom-container {
   display: flex;
+  height: calc(100% - 50px);
 }
