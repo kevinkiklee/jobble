@@ -4,13 +4,20 @@ import './index.css';
 
 const SideMenu = props => {
   return (
-    <div className='SideMenu'>
-      <h2>SideMenu</h2>
+    <div className='side-menu'>
       <ul>
-        <li>Dashboard</li>
-        <li>Companies</li>
-        <li>Applications</li>
-        <li>Materials</li>
+        <li className='side-menu__item side-menu__dashboard'>
+          Dashboard
+        </li>
+        <li className='side-menu__item side-menu__companies'>
+          Companies
+        </li>
+        <li className='side-menu__item side-menu__applications'>
+          Applications
+        </li>
+        <li className='side-menu__item side-menu__materials'>
+          Materials
+        </li>
       </ul>
     </div>
   )

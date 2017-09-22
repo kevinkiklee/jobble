@@ -1,0 +1,13 @@
+@import '../../styles/style.css';
+
+.side-menu {
+  width: 75px;
+  height: 100%;
+  background: #222b31;
+  color: white;
+}
+
+.side-menu__item {
+  height: 75px;
+  width: 75px;
+}
