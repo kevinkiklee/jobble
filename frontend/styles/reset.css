@@ -16,7 +16,12 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: 'Sans Serif';
+	font-family: 'Hind', 'Sans Serif';
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Quicksand';
+	font-weight: 500;
 }
 
 article, aside, details, figcaption, figure,
