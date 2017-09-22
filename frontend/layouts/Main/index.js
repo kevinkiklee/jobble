@@ -1,23 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import SideMenu from '../../components/SideMenu';
+import Slider from '../../components/Slider';
+import Stages from '../../components/Stages';
 import './index.css';
 
 const Main = props => {
   return (
     <div className='main'>
       <h1>JOBBLE</h1>
-      <h2>MAIN APPLICATION</h2>
-      <div className='main__homepage-link btn'>
-        <Link to='/'>
-          <h6>HOMEPAGE</h6>
-        </Link>
-      </div>
-      <div
-        className='homepage__logout-button btn'
-        onClick={() => props.auth.logout()}
-      >
-        LOGOUT
-      </div>
+      <Header />
+      <SideMenu />
+      <Slider />
+      <Stages />
     </div>
   )
 };
