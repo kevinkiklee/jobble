@@ -9,11 +9,14 @@ import './index.css';
 const Main = props => {
   return (
     <div className='main'>
-      <h1>JOBBLE</h1>
-      <Header />
-      <SideMenu />
-      <Slider />
-      <Stages />
+      <div className='main__top-container'>
+        <Header />
+      </div>
+      <div className='main__bottom-container'>
+        <SideMenu />
+        <Slider />
+        <Stages />
+      </div>
     </div>
   )
 };
