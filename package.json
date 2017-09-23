@@ -37,7 +37,8 @@
     "build": "webpack",
     "watch": "webpack --progress --colors --watch",
     "server": "webpack-dev-server --progress --colors",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "lint": "miclint --flow"
   },
   "version": "1.0.0",
   "main": "index.js",
