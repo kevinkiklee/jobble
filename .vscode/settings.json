@@ -1,0 +1,14 @@
+{
+  "eslint.options": {
+    "configFile": "node_modules/miclint/eslintrc-flow.json"
+  },
+  "javascript.validate.enable": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/public": true,
+    "**/*.snap": true
+  }
+}
