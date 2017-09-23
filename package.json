@@ -30,6 +30,7 @@
   "devDependencies": {
     "eslint": "^4.6.1",
     "flow-bin": "^0.55.0",
+    "miclint": "^4.2.2",
     "webpack-dev-server": "^2.7.1"
   },
   "scripts": {
