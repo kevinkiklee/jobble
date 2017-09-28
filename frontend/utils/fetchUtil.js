@@ -1,3 +1,6 @@
-export const fetchJSON = (path) => {
-  return fetch(path).then((res) => res.json());
-};
+const fetchJSON = path => (
+  fetch(path).then(res =>
+    res.json(),
+  )
+)
+export default fetchJSON

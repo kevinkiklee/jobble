@@ -1,15 +1,15 @@
-import { RECEIVE_DATA } from '../actions/dataActions';
+import { RECEIVE_DATA } from '../actions/dataActions'
 
 const DataReducer = (state = {}, action) => {
-  Object.freeze(state);
+  Object.freeze(state)
 
   switch (action.type) {
     case RECEIVE_DATA:
-      return Object.assign({}, state, action.data);
+      return Object.assign({}, state, action.data)
 
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default DataReducer;
+export default DataReducer
