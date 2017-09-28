@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react'
 
 // TODO: Add loading spinner
-class AuthCallback extends Component {
-  render() {
-    return (
-      <div className='loading' />
-    );
-  }
-}
+const AuthCallback = () => (
+  <div className="loading" />
+)
 
-export default AuthCallback;
+export default AuthCallback

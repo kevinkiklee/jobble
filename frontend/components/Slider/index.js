@@ -1,12 +1,10 @@
-import React from 'react';
-import './index.css';
+import React from 'react'
+import './index.css'
 
-const Slider = props => {
-  return (
-    <div className='slider'>
-      <h2>Slider</h2>
-    </div>
-  )
-};
+const Slider = () => (
+  <div className="slider">
+    <h2>Slider</h2>
+  </div>
+)
 
-export default Slider;
+export default Slider
