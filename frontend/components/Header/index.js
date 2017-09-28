@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
 
-const Header = props => (
+const Header = ({ auth }) => (
   <div className="header u-flex-center">
     <div className="header__left-container">
       <div className="header__logo">
@@ -17,7 +17,7 @@ const Header = props => (
       </div>
       <button
         className="homepage__logout-button btn"
-        onClick={() => props.auth.logout()}
+        onClick={() => auth.logout()}
       >
         LOGOUT
       </button>
