@@ -5,7 +5,7 @@ const AppReducer = (state = {}, action) => {
     case RECEIVE_IS_MOBILE:
       return { ...state, isMobile: action.isMobile };
 
-    default: 
+    default:
       return state;
   }
 };
