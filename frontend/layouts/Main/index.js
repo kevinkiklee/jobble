@@ -5,10 +5,10 @@ import Slider from '../../components/Slider'
 import Stages from '../../components/Stages'
 import './index.css'
 
-const Main = () => (
+const Main = ({ auth }) => (
   <div className="main">
     <div className="main__top-container">
-      <Header />
+      <Header auth={auth} />
     </div>
     <div className="main__bottom-container">
       <SideMenu />
